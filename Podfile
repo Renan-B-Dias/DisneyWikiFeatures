@@ -9,6 +9,7 @@ project 'data/data.xcodeproj'
 project 'app/app.xcodeproj'
 project 'base/base.xcodeproj'
 project 'Features/characterList.xcodeproj'
+project 'Features/moviesList.xcodeproj'
 
 def rx_pods
   pod 'RxSwift'
@@ -52,3 +53,10 @@ target 'characterList' do
   ui_pods
   rx_pods
 end
+
+target 'moviesList' do
+  project 'moviesList/moviesList.xcodeproj'
+  ui_pods
+  rx_pods
+end
+

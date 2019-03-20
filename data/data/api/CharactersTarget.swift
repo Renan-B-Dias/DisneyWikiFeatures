@@ -31,13 +31,21 @@ extension CharactersTarget: BaseTargetType {
             return "characters/\(id)"
         }
     }
-    
-//    var method: Moya.Method {
-//        return .get
-//    }
-//    
-//    var task: Task {
-//        return .requestPlain
-//    }
 }
 
+extension APIClient: CharactersAPIProtocol {
+    
+    public func getAllCharacters() -> Single<[CharacterAPI]> {
+        return APIClient.charactersProvider
+            .rx.request(.getAllCharacters)
+            .observeOn(ConcurrentDispatchQueueScheduler(qos: .utility))
+            .mapArray(CharacterAPI.self)
+    }
+    
+    public func getCharacter(id: Int) -> Single<CharacterAPI> {
+        return APIClient.charactersProvider
+            .rx.request(.getCharacter(id: id))
+            .observeOn(ConcurrentDispatchQueueScheduler(qos: .utility))
+            .mapObject(CharacterAPI.self)
+    }
+}

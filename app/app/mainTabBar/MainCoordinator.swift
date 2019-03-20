@@ -8,6 +8,7 @@
 
 import UIKit
 import characterList
+import moviesList
 
 final class MainCoordinator {
     
@@ -21,11 +22,14 @@ final class MainCoordinator {
     
     private func addTabs() {
         let characterListViewController = CharacterListBuilder.build()
+        let moviesListViewController = MovieListViewController()
         
         characterListViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .mostViewed, tag: 0)
+        moviesListViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 1)
         
         let viewControllers = [
-            characterListViewController
+            characterListViewController,
+            moviesListViewController
         ]
         
         tabViewController.setViewControllers(viewControllers, animated: true)

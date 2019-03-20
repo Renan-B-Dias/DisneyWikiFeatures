@@ -109,13 +109,8 @@
 			children = (
 				84EFAA1C22427ED100652771 /* characterList.h */,
 				84EFAA1D22427ED100652771 /* Info.plist */,
-				84EFAA382242815D00652771 /* CharacterTableViewCell.swift */,
-				84EFAA392242815D00652771 /* CharacterTableViewCell.xib */,
-				84EFAA40224285FF00652771 /* CharacterListInteractor.swift */,
-				84EFAA3E2242853400652771 /* CharacterListPresenter.swift */,
-				84EFAA3622427F0C00652771 /* CharacterListViewController.swift */,
-				84EFAA422242863800652771 /* Character.swift */,
-				84EFAA4B2242884C00652771 /* CharacterListBuilder.swift */,
+				84EFAACE2242E5CA00652771 /* domain */,
+				84EFAACF2242E5F500652771 /* presentation */,
 			);
 			path = characterList;
 			sourceTree = "<group>";
@@ -137,6 +132,43 @@
 				2A329B496123A9664C1381D4 /* Pods_characterList.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84EFAACC2242E5AB00652771 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				84EFAA382242815D00652771 /* CharacterTableViewCell.swift */,
+				84EFAA392242815D00652771 /* CharacterTableViewCell.xib */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		84EFAACD2242E5B300652771 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				84EFAA422242863800652771 /* Character.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		84EFAACE2242E5CA00652771 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				84EFAACD2242E5B300652771 /* models */,
+				84EFAA40224285FF00652771 /* CharacterListInteractor.swift */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		84EFAACF2242E5F500652771 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				84EFAACC2242E5AB00652771 /* views */,
+				84EFAA4B2242884C00652771 /* CharacterListBuilder.swift */,
+				84EFAA3E2242853400652771 /* CharacterListPresenter.swift */,
+				84EFAA3622427F0C00652771 /* CharacterListViewController.swift */,
+			);
+			path = presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
