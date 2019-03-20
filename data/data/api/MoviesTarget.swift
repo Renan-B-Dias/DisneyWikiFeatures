@@ -34,24 +34,6 @@ extension MoviesTarget: BaseTargetType {
     }
 }
 
-//// Huh.......
-//let moviesProvider = MoyaProvider<MoviesTarget>( endpointClosure: { (target) -> Endpoint in
-//
-//    return Endpoint(url: "\(target.baseURL)\(target.path)",
-//        sampleResponseClosure: {.networkResponse(200, target.sampleData)},
-//        method: target.method,
-//        task: target.task,
-//        httpHeaderFields: target.headers)
-//
-//}, plugins: [NetworkActivityPlugin { (change, _)  in
-//    switch change {
-//    case .began:
-//        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-//    case .ended:
-//        UIApplication.shared.isNetworkActivityIndicatorVisible = false
-//    }
-//    }, NetworkLoggerPlugin(verbose: true)])
-
 extension APIClient: MoviesAPIProtocol {
     
     public func getAllMovies() -> Single<[MovieAPI]> {
