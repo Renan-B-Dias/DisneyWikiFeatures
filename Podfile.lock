@@ -1,5 +1,24 @@
 PODS:
+  - Alamofire (4.8.1)
   - Cartography (3.1.0)
+  - Kingfisher (5.2.0)
+  - Moya (12.0.1):
+    - Moya/Core (= 12.0.1)
+  - Moya-ObjectMapper/Core (2.8):
+    - Moya (~> 12.0)
+    - ObjectMapper (~> 3.4)
+  - Moya-ObjectMapper/RxSwift (2.8):
+    - Moya-ObjectMapper/Core
+    - Moya/RxSwift
+    - RxSwift (~> 4)
+  - Moya/Core (12.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.0)
+  - Moya/RxSwift (12.0.1):
+    - Moya/Core
+    - RxSwift (~> 4.0)
+  - ObjectMapper (3.4.2)
+  - Result (4.1.0)
   - RxAtomic (4.4.1)
   - RxCocoa (4.4.1):
     - RxSwift (~> 4.0)
@@ -8,22 +27,37 @@ PODS:
 
 DEPENDENCIES:
   - Cartography
+  - Kingfisher
+  - Moya-ObjectMapper/RxSwift
+  - Moya/RxSwift
   - RxCocoa
   - RxSwift
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - Alamofire
     - Cartography
+    - Kingfisher
+    - Moya
+    - Moya-ObjectMapper
+    - ObjectMapper
+    - Result
     - RxAtomic
     - RxCocoa
     - RxSwift
 
 SPEC CHECKSUMS:
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   Cartography: 1988b7578871a56c036e7af17195cb2190edf18c
+  Kingfisher: 07067cfacf371117330dceb4b4b8f5c4b691ab42
+  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
+  Moya-ObjectMapper: c514b5eafcfd5e260f85f7a5bf66895a217e2b37
+  ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RxAtomic: f8d6adc1ccb87a767811269e4875887bc74dbf19
   RxCocoa: 2f35a76bf8887872e28a1914112395b11b8e0e64
   RxSwift: 92fcf68dfef21f3e2ab1965363d9e7b3d787597e
 
-PODFILE CHECKSUM: d72c5a95b6ce2431548cbb40afed164dd0fa67c7
+PODFILE CHECKSUM: e9562aff79c0ca56d3478756baa61e8dcdb2966a
 
 COCOAPODS: 1.5.0

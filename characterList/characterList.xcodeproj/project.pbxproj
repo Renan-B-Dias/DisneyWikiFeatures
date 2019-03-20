@@ -19,6 +19,7 @@
 		84EFAA41224285FF00652771 /* CharacterListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFAA40224285FF00652771 /* CharacterListInteractor.swift */; };
 		84EFAA432242863800652771 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFAA422242863800652771 /* Character.swift */; };
 		84EFAA4C2242884C00652771 /* CharacterListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFAA4B2242884C00652771 /* CharacterListBuilder.swift */; };
+		84EFAA8E2242BE9300652771 /* data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84EFAA8D2242BE9300652771 /* data.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		84EFAA40224285FF00652771 /* CharacterListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListInteractor.swift; sourceTree = "<group>"; };
 		84EFAA422242863800652771 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		84EFAA4B2242884C00652771 /* CharacterListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListBuilder.swift; sourceTree = "<group>"; };
+		84EFAA8D2242BE9300652771 /* data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA43162B9D7937E583A969CB /* Pods-characterList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-characterList.release.xcconfig"; path = "../Pods/Target Support Files/Pods-characterList/Pods-characterList.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84EFAA8E2242BE9300652771 /* data.framework in Frameworks */,
 				84EFAA3522427EE600652771 /* base.framework in Frameworks */,
 				1589910F2002BA4B46742580 /* Pods_characterList.framework in Frameworks */,
 			);
@@ -129,6 +132,7 @@
 		84EFAA3322427EE600652771 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84EFAA8D2242BE9300652771 /* data.framework */,
 				84EFAA3422427EE600652771 /* base.framework */,
 				2A329B496123A9664C1381D4 /* Pods_characterList.framework */,
 			);

@@ -27,7 +27,7 @@ extension CharacterListPresenter: CharacterListPresenterProtocol {
     var viewModels: Driver<[CharacterTableViewCellProtocol]> {
         return getCharactersSubject
             .flatMap { [unowned self] in self.interactor.getAllCharacters() }
-            .map { _ in [] }
+            .map { $0.map { CharacterTableViewCellModel(name: $0.fullName, imageURL: nil) } }
             .asDriver(onErrorJustReturn: [])
     }
     

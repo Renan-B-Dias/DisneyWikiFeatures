@@ -61,7 +61,7 @@ final class CharacterListViewController: BaseViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.register(UINib(nibName: CharacterTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: CharacterTableViewCell.nibName)
+        tableView.register(UINib(nibName: CharacterTableViewCell.nibName, bundle: Bundle(identifier: "com.renan.dias.characterList")), forCellReuseIdentifier: CharacterTableViewCell.nibName)
         
         title = "Characters"
         self.navigationController?.navigationBar.prefersLargeTitles = true
