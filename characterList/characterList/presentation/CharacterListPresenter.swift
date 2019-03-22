@@ -10,7 +10,14 @@ import RxSwift
 import RxCocoa
 import base
 
+public protocol CharacterListRouterProtocol: class {
+    
+    func goToCharacterWith(id characterId: Int)
+}
+
 final class CharacterListPresenter: BasePresenter {
+    
+    weak var router: CharacterListRouterProtocol?
     
     private let getCharactersSubject = PublishSubject<Void>()
     
@@ -27,11 +34,15 @@ extension CharacterListPresenter: CharacterListPresenterProtocol {
     var viewModels: Driver<[CharacterTableViewCellProtocol]> {
         return getCharactersSubject
             .flatMap { [unowned self] in self.interactor.getAllCharacters() }
-            .map { $0.map { CharacterTableViewCellModel(name: $0.fullName, imageURL: nil) } }
+            .map { $0.map { CharacterTableViewCellModel(id: $0.id, name: $0.fullName, imageURL: nil) } }
             .asDriver(onErrorJustReturn: [])
     }
     
     func viewDidLoad() {
         getCharactersSubject.onNext(())
+    }
+    
+    func didSelectCharacter(id: Int) {
+        router?.goToCharacterWith(id: id)
     }
 }

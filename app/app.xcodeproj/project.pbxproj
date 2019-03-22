@@ -23,6 +23,10 @@
 		84EFAA8A2242BDF400652771 /* data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84EFAA882242BDF400652771 /* data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84EFAAC82242E13200652771 /* moviesList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84EFAAC72242E13200652771 /* moviesList.framework */; };
 		84EFAAC92242E13200652771 /* moviesList.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84EFAAC72242E13200652771 /* moviesList.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		84FBE3A2224417230092E23E /* characterDetails.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FBE3A1224417230092E23E /* characterDetails.framework */; };
+		84FBE3A3224417230092E23E /* characterDetails.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84FBE3A1224417230092E23E /* characterDetails.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		84FBE3A522441AEA0092E23E /* models.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FBE3A422441AEA0092E23E /* models.framework */; };
+		84FBE3A622441AEA0092E23E /* models.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84FBE3A422441AEA0092E23E /* models.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B01BC83B519B48D871CF4351 /* Pods_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E18D275CABB866F72E7B344 /* Pods_app.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +58,8 @@
 				84EFAA8A2242BDF400652771 /* data.framework in Embed Frameworks */,
 				84EFAA46224287DE00652771 /* base.framework in Embed Frameworks */,
 				84EFAAC92242E13200652771 /* moviesList.framework in Embed Frameworks */,
+				84FBE3A622441AEA0092E23E /* models.framework in Embed Frameworks */,
+				84FBE3A3224417230092E23E /* characterDetails.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,6 +87,8 @@
 		84EFAA48224287E800652771 /* characterList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = characterList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EFAA882242BDF400652771 /* data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EFAAC72242E13200652771 /* moviesList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = moviesList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84FBE3A1224417230092E23E /* characterDetails.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = characterDetails.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84FBE3A422441AEA0092E23E /* models.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = models.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF27087D9B2024E58A70AED /* Pods-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app.release.xcconfig"; path = "../Pods/Target Support Files/Pods-app/Pods-app.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,9 +98,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				84EFAA892242BDF400652771 /* data.framework in Frameworks */,
+				84FBE3A2224417230092E23E /* characterDetails.framework in Frameworks */,
 				84EFAA49224287E800652771 /* characterList.framework in Frameworks */,
 				84EFAAC82242E13200652771 /* moviesList.framework in Frameworks */,
 				B01BC83B519B48D871CF4351 /* Pods_app.framework in Frameworks */,
+				84FBE3A522441AEA0092E23E /* models.framework in Frameworks */,
 				84EFAA45224287DE00652771 /* base.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,6 +136,8 @@
 		84EFA9A62242748000652771 = {
 			isa = PBXGroup;
 			children = (
+				84FBE3A422441AEA0092E23E /* models.framework */,
+				84FBE3A1224417230092E23E /* characterDetails.framework */,
 				84EFAAC72242E13200652771 /* moviesList.framework */,
 				84EFAA882242BDF400652771 /* data.framework */,
 				84EFA9B12242748000652771 /* app */,
@@ -576,7 +588,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.renan.dias.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -595,7 +607,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.renan.dias.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

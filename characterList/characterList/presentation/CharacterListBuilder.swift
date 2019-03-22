@@ -10,9 +10,10 @@ import UIKit
 
 public enum CharacterListBuilder {
     
-    public static func build() -> UIViewController {
+    public static func build(router: CharacterListRouterProtocol) -> UIViewController {
         let interactor = CharacterListInteractor()
         let presenter = CharacterListPresenter(interactor: interactor)
+        presenter.router = router
         return CharacterListViewController(presenter: presenter)
     }
 }

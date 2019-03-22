@@ -10,12 +10,14 @@ import UIKit
 
 protocol CharacterTableViewCellProtocol {
     
+    var id: Int { get }
     var name: String { get }
     var imageURL: URL? { get }
 }
 
 struct CharacterTableViewCellModel: CharacterTableViewCellProtocol {
     
+    let id: Int
     let name: String
     let imageURL: URL?
 }

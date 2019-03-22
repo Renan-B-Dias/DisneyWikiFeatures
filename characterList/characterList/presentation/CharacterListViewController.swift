@@ -17,6 +17,7 @@ protocol  CharacterListPresenterProtocol {
     var viewModels: Driver<[CharacterTableViewCellProtocol]> { get }
     
     func viewDidLoad()
+    func didSelectCharacter(id: Int)
 }
 
 final class CharacterListViewController: BaseViewController {
@@ -85,5 +86,7 @@ extension CharacterListViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let viewModel = viewModels[indexPath.row]
+        presenter.didSelectCharacter(id: viewModel.id)
     }
 }

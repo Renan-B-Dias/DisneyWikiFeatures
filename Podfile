@@ -5,11 +5,12 @@ use_frameworks!
 workspace 'DisneyWikiFeatures'
 
 project 'data/data.xcodeproj'
-# project 'domain/domain.xcodeproj'
 project 'app/app.xcodeproj'
 project 'base/base.xcodeproj'
 project 'Features/characterList.xcodeproj'
+project 'Features/characterDetails.xcodeproj'
 project 'Features/moviesList.xcodeproj'
+
 
 def rx_pods
   pod 'RxSwift'
@@ -31,11 +32,6 @@ target 'data' do
   network_pods
 end
 
-# target 'domain' do
-#   project 'domain/domain.xcodeproj'
-#   rx_pods
-# end
-
 target 'app' do
   project 'app/app.xcodeproj'
   ui_pods
@@ -54,9 +50,14 @@ target 'characterList' do
   rx_pods
 end
 
+target 'characterDetails' do
+    project 'characterDetails/characterDetails.xcodeproj'
+    ui_pods
+    rx_pods
+end
+
 target 'moviesList' do
   project 'moviesList/moviesList.xcodeproj'
   ui_pods
   rx_pods
 end
-

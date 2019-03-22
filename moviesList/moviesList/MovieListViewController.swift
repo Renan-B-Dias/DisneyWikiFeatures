@@ -71,6 +71,10 @@ public final class MovieListViewController: UIViewController {
         title = "Characters"
         self.navigationController?.navigationBar.prefersLargeTitles = true
     }
+    
+    deinit {
+        print("dealloc ---> \(String(describing: type(of: self)))")
+    }
 }
 
 extension MovieListViewController: UITableViewDelegate, UITableViewDataSource {

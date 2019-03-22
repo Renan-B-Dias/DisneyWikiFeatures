@@ -8,10 +8,11 @@
 
 import RxSwift
 import data
+import models
 
 protocol CharacterListInteractorProtocol {
     
-    func getAllCharacters() -> Single<[Character]>
+    func getAllCharacters() -> Single<[models.Character]>
 }
 
 final class CharacterListInteractor {
@@ -23,7 +24,7 @@ final class CharacterListInteractor {
 
 extension CharacterListInteractor: CharacterListInteractorProtocol {
     
-    func getAllCharacters() -> Single<[Character]> {
+    func getAllCharacters() -> Single<[models.Character]> {
         return repository.getAllCharacters()
             .map { (characters) in characters.compactMap { Character(characterAPI: $0) } }
     }

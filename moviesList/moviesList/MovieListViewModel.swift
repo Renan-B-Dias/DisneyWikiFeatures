@@ -7,6 +7,7 @@
 //
 
 import data
+import models
 import RxCocoa
 
 struct MovieListViewModel {

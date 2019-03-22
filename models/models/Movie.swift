@@ -1,26 +1,26 @@
 //
 //  Movie.swift
-//  moviesList
+//  models
 //
-//  Created by Renan Benatti Dias on 20/03/19.
+//  Created by Renan Benatti Dias on 21/03/19.
 //  Copyright © 2019 Renan Benatti Dias. All rights reserved.
 //
 
 import data
 
-struct Movie {
+public struct Movie {
     
-    let id: Int
-    let name: String
+    public let id: Int
+    public let name: String
 //    private let releaseDate: String
-    let runningTime: String
-    let grossRevenue: String
-    let synopsis: String
+    public let runningTime: String
+    public let grossRevenue: String
+    public let synopsis: String
 }
 
 extension Movie {
     
-    init?(movieAPI: MovieAPI) {
+    public init?(movieAPI: MovieAPI) {
         guard let id = movieAPI.id,
             let name = movieAPI.name,
             let runningTime = movieAPI.runningTime,
@@ -30,3 +30,4 @@ extension Movie {
         self.init(id: id, name: name, runningTime: runningTime, grossRevenue: grossRevenue, synopsis: synopsis)
     }
 }
+

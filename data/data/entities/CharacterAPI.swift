@@ -14,6 +14,7 @@ public struct CharacterAPI {
     public var fullName: String?
     public var personality: String?
     public var rank: String?
+    public var movies: [MovieAPI] = []
 }
 
 extension CharacterAPI: Mappable {
@@ -26,6 +27,7 @@ extension CharacterAPI: Mappable {
         id <- map["id"]
         fullName <- map["full_name"]
         personality <- map["personality"]
-        personality <- map["rank"]
+        rank <- map["rank"]
+        movies <- map["movies"]
     }
 }
