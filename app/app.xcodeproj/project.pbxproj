@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8478224822490F5300D8E877 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8478224722490F5300D8E877 /* UI.framework */; };
+		8478224922490F5300D8E877 /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8478224722490F5300D8E877 /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		84CC8AF2224585B000B0ADC0 /* movieDetails.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CC8AF1224585B000B0ADC0 /* movieDetails.framework */; };
+		84CC8AF3224585B000B0ADC0 /* movieDetails.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84CC8AF1224585B000B0ADC0 /* movieDetails.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84EFA9B32242748000652771 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFA9B22242748000652771 /* AppDelegate.swift */; };
 		84EFA9BA2242748200652771 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84EFA9B92242748200652771 /* Assets.xcassets */; };
 		84EFA9BD2242748200652771 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EFA9BB2242748200652771 /* LaunchScreen.storyboard */; };
@@ -54,11 +58,13 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				84CC8AF3224585B000B0ADC0 /* movieDetails.framework in Embed Frameworks */,
 				84EFAA4A224287E800652771 /* characterList.framework in Embed Frameworks */,
 				84EFAA8A2242BDF400652771 /* data.framework in Embed Frameworks */,
 				84EFAA46224287DE00652771 /* base.framework in Embed Frameworks */,
 				84EFAAC92242E13200652771 /* moviesList.framework in Embed Frameworks */,
 				84FBE3A622441AEA0092E23E /* models.framework in Embed Frameworks */,
+				8478224922490F5300D8E877 /* UI.framework in Embed Frameworks */,
 				84FBE3A3224417230092E23E /* characterDetails.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -69,6 +75,8 @@
 /* Begin PBXFileReference section */
 		0F9B553B05FCD40C651B56FF /* Pods-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-app/Pods-app.debug.xcconfig"; sourceTree = "<group>"; };
 		3E18D275CABB866F72E7B344 /* Pods_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8478224722490F5300D8E877 /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84CC8AF1224585B000B0ADC0 /* movieDetails.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = movieDetails.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EFA9AF2242748000652771 /* app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EFA9B22242748000652771 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84EFA9B92242748200652771 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,6 +111,8 @@
 				84EFAAC82242E13200652771 /* moviesList.framework in Frameworks */,
 				B01BC83B519B48D871CF4351 /* Pods_app.framework in Frameworks */,
 				84FBE3A522441AEA0092E23E /* models.framework in Frameworks */,
+				8478224822490F5300D8E877 /* UI.framework in Frameworks */,
+				84CC8AF2224585B000B0ADC0 /* movieDetails.framework in Frameworks */,
 				84EFAA45224287DE00652771 /* base.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,6 +146,8 @@
 		84EFA9A62242748000652771 = {
 			isa = PBXGroup;
 			children = (
+				8478224722490F5300D8E877 /* UI.framework */,
+				84CC8AF1224585B000B0ADC0 /* movieDetails.framework */,
 				84FBE3A422441AEA0092E23E /* models.framework */,
 				84FBE3A1224417230092E23E /* characterDetails.framework */,
 				84EFAAC72242E13200652771 /* moviesList.framework */,

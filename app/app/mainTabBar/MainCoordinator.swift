@@ -10,6 +10,7 @@ import UIKit
 import characterList
 import characterDetails
 import moviesList
+import movieDetails
 
 final class MainCoordinator {
     
@@ -25,7 +26,7 @@ final class MainCoordinator {
     private func addTabs() {
         let characterListViewController = CharacterListBuilder.build(router: self)
         
-        let moviesListViewController = MovieListViewController()
+        let moviesListViewController = MovieListViewController(router: self)
         
         characterListViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .mostViewed, tag: 0)
         moviesListViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 1)
@@ -40,8 +41,8 @@ final class MainCoordinator {
     }
 }
 
-// MARK: - CharacterListRouterProtocol
-extension MainCoordinator: CharacterListRouterProtocol {
+// MARK: - CharacterListRouterProtocol, MovieDetailsRouterProtocol
+extension MainCoordinator: CharacterListRouterProtocol, MovieDetailsRouterProtocol {
     
     func goToCharacterWith(id characterId: Int) {
         let characterDetailsViewController = CharacterDetailsBuilder.build(id: characterId, router: self)
@@ -49,11 +50,11 @@ extension MainCoordinator: CharacterListRouterProtocol {
     }
 }
 
-// MARK: - CharacterDetailsRouterProtocol
-extension MainCoordinator: CharacterDetailsRouterProtocol {
+// MARK: - CharacterDetailsRouterProtocol, MovieListRouterProtocol
+extension MainCoordinator: CharacterDetailsRouterProtocol, MovieListRouterProtocol {
     
     func goToMovieDetailsWith(id: Int) {
-        let moviesListViewController = MovieListViewController()
-        navigationController.pushViewController(moviesListViewController, animated: true)
+        let movieDetailsViewController = MovieDetailsViewController(movieId: id, router: self)
+        navigationController.pushViewController(movieDetailsViewController, animated: true)
     }
 }

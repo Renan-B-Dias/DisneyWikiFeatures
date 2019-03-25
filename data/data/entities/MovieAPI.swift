@@ -15,6 +15,7 @@ public struct MovieAPI {
     public var runningTime: String?
     public var grossRevenue: String?
     public var synopsis: String?
+    public var characters: [CharacterAPI] = []
 }
 
 extension MovieAPI: Mappable {
@@ -29,5 +30,6 @@ extension MovieAPI: Mappable {
         runningTime <- map["running_time"]
         grossRevenue <- map["gross_revenue"]
         synopsis <- map["synopsis"]
+        characters <- map["characters"]
     }
 }

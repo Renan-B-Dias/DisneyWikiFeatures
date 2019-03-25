@@ -11,10 +11,7 @@ import base
 import RxSwift
 import RxCocoa
 import Cartography
-
-protocol BaseTableViewCell {
-    
-}
+import UI
 
 protocol CharacterDetailsPresenterProtocol {
     
@@ -57,10 +54,10 @@ final class CharacterDetailsViewController: BaseViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.register(UINib(nibName: CharacterDetailsHeaderTableViewCell.nibName, bundle: Bundle(identifier: "com.renan.dias.characterDetails")), forCellReuseIdentifier: CharacterDetailsHeaderTableViewCell.nibName)
-        tableView.register(UINib(nibName: SimpleLabelTableViewCell.nibName, bundle: Bundle(identifier: "com.renan.dias.characterDetails")), forCellReuseIdentifier: SimpleLabelTableViewCell.nibName)
         
-//        title = "Character"
+        tableView.register(UINib(nibName: CharacterDetailsHeaderTableViewCell.nibName, bundle: Bundle(identifier: "com.renan.dias.UI")), forCellReuseIdentifier: CharacterDetailsHeaderTableViewCell.nibName)
+        tableView.register(UINib(nibName: SimpleLabelTableViewCell.nibName, bundle: Bundle(identifier: "com.renan.dias.UI")), forCellReuseIdentifier: SimpleLabelTableViewCell.nibName)
+        
         self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
@@ -93,12 +90,11 @@ extension CharacterDetailsViewController: UITableViewDelegate, UITableViewDataSo
         if let viewModel = viewModels[row] as? CharacterDetailsHeaderTableViewCellProtocol, let cell = tableView.dequeueReusableCell(withIdentifier: CharacterDetailsHeaderTableViewCell.nibName, for: indexPath) as? CharacterDetailsHeaderTableViewCell {
             cell.bind(viewModel: viewModel)
             return cell
-            
         } else if let viewModel = viewModels[row] as? SimpleLabelTableViewCellProtocol, let cell = tableView.dequeueReusableCell(withIdentifier: SimpleLabelTableViewCell.nibName, for: indexPath) as? SimpleLabelTableViewCell {
             cell.bind(viewModel: viewModel)
             return cell
         }
-        
+    
         return UITableViewCell()
     }
     

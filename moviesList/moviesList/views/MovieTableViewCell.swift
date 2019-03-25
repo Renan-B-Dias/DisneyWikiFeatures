@@ -11,12 +11,14 @@ import Kingfisher
 
 protocol MovieTableViewCellProtocol {
     
+    var id: Int { get }
     var posterURL: URL? { get }
     var name: String { get }
 }
 
 struct MovieTableViewCellModel: MovieTableViewCellProtocol {
     
+    var id: Int
     let posterURL: URL?
     let name: String
 }

@@ -10,6 +10,7 @@ import RxSwift
 import RxCocoa
 import models
 import base
+import UI
 
 public protocol CharacterDetailsRouterProtocol: class {
     
@@ -45,16 +46,16 @@ extension CharacterDetailsPresenter: CharacterDetailsPresenterProtocol {
             .map { (character) -> [BaseTableViewCell] in
                 let headerModel = CharacterDetailsHeaderTableViewCellModel(imageURL: nil)
                 let personality = SimpleLabelTableViewCellModel(id: nil, text: character.personality, font: UIFont.systemFont(ofSize: 17))
-                
+
                 let movieHeader = SimpleLabelTableViewCellModel(id: nil, text: "Movies", font: UIFont.boldSystemFont(ofSize: 24))
                 let moviesViewModels = character.movies.map { SimpleLabelTableViewCellModel(id: $0.id, text: $0.name, font: UIFont.systemFont(ofSize: 17)) }
-                
+
                 var viewModels: [BaseTableViewCell] = [
                     headerModel,
                     personality,
                     movieHeader
                 ]
-                
+
                 viewModels.append(contentsOf: moviesViewModels)
                 
                 return viewModels

@@ -16,6 +16,7 @@ public struct Movie {
     public let runningTime: String
     public let grossRevenue: String
     public let synopsis: String
+    public let characters: [Character]
 }
 
 extension Movie {
@@ -27,7 +28,9 @@ extension Movie {
             let grossRevenue = movieAPI.grossRevenue,
             let synopsis = movieAPI.synopsis else { return nil }
         
-        self.init(id: id, name: name, runningTime: runningTime, grossRevenue: grossRevenue, synopsis: synopsis)
+        let characters = movieAPI.characters.compactMap { Character(characterAPI: $0) }
+        
+        self.init(id: id, name: name, runningTime: runningTime, grossRevenue: grossRevenue, synopsis: synopsis, characters: characters)
     }
 }
 

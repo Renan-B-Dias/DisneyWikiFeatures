@@ -9,28 +9,32 @@
 import UIKit
 import Kingfisher
 
-protocol CharacterDetailsHeaderTableViewCellProtocol: BaseTableViewCell {
+public protocol CharacterDetailsHeaderTableViewCellProtocol: BaseTableViewCell {
     
     var imageURL: URL? { get }
 }
 
-struct CharacterDetailsHeaderTableViewCellModel: CharacterDetailsHeaderTableViewCellProtocol {
+public struct CharacterDetailsHeaderTableViewCellModel: CharacterDetailsHeaderTableViewCellProtocol {
     
-    let imageURL: URL?
+    public let imageURL: URL?
+    
+    public init(imageURL: URL?) {
+        self.imageURL = imageURL
+    }
 }
 
-final class CharacterDetailsHeaderTableViewCell: UITableViewCell {
+public final class CharacterDetailsHeaderTableViewCell: UITableViewCell {
     
     @IBOutlet weak var characterImageView: UIImageView!
     
     private var viewModel: CharacterDetailsHeaderTableViewCellProtocol?
 
-    override func awakeFromNib() {
+    public override func awakeFromNib() {
         super.awakeFromNib()
         applyLayout()
     }
     
-    func bind(viewModel: CharacterDetailsHeaderTableViewCellProtocol) {
+    public func bind(viewModel: CharacterDetailsHeaderTableViewCellProtocol) {
         
         characterImageView.kf.setImage(with: viewModel.imageURL)
         

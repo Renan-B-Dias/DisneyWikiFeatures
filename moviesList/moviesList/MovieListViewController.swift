@@ -16,6 +16,8 @@ import data
 protocol MovieListViewModelProtocol {
     
     var movies: Driver<[MovieTableViewCellProtocol]> { get }
+    
+    func didTapMovieWith(id: Int)
 }
 
 public final class MovieListViewController: UIViewController {
@@ -28,8 +30,8 @@ public final class MovieListViewController: UIViewController {
     
     private let tableView = UITableView(frame: .zero)
     
-    public init() {
-        self.viewModel = MovieListViewModel(repository: MoviesRepository())
+    public init(router: MovieListRouterProtocol) {
+        self.viewModel = MovieListViewModel(repository: MoviesRepository(), router: router)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -92,7 +94,9 @@ extension MovieListViewController: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
     
-    private func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let movieViewModel = movieViewModels[indexPath.row]
+        viewModel.didTapMovieWith(id: movieViewModel.id)
     }
 }

@@ -8,32 +8,38 @@
 
 import UIKit
 
-protocol SimpleLabelTableViewCellProtocol: BaseTableViewCell {
+public protocol SimpleLabelTableViewCellProtocol: BaseTableViewCell {
     
     var id: Int? { get }
     var text: String { get }
     var font: UIFont { get }
 }
 
-struct SimpleLabelTableViewCellModel: SimpleLabelTableViewCellProtocol {
+public struct SimpleLabelTableViewCellModel: SimpleLabelTableViewCellProtocol {
     
-    let id: Int?    // Only for testing
-    let text: String
-    let font: UIFont
+    public let id: Int?    // Only for testing
+    public let text: String
+    public let font: UIFont
+    
+    public init(id: Int?, text: String, font: UIFont) {
+        self.id = id
+        self.text = text
+        self.font = font
+    }
 }
 
-final class SimpleLabelTableViewCell: UITableViewCell {
+public final class SimpleLabelTableViewCell: UITableViewCell {
     
     @IBOutlet weak var simpleTextLabel: UILabel!
     
     private var viewModel: SimpleLabelTableViewCellProtocol?
 
-    override func awakeFromNib() {
+    public override func awakeFromNib() {
         super.awakeFromNib()
         self.simpleTextLabel.numberOfLines = 0
     }
     
-    func bind(viewModel: SimpleLabelTableViewCellProtocol) {
+    public func bind(viewModel: SimpleLabelTableViewCellProtocol) {
         
         self.simpleTextLabel.text = viewModel.text
         self.simpleTextLabel.font = viewModel.font

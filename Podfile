@@ -27,6 +27,16 @@ def ui_pods
   pod 'Kingfisher'
 end
 
+def feature_targets targets
+  targets.each do |target_name|
+    target target_name do
+      project "#{target_name}/#{target_name}.xcodeproj"
+      ui_pods
+      rx_pods
+    end
+  end
+end
+
 target 'data' do
   project 'data/data.xcodeproj'
   network_pods
@@ -44,20 +54,33 @@ target 'base' do
   rx_pods
 end
 
-target 'characterList' do
-  project 'characterList/characterList.xcodeproj'
-  ui_pods
-  rx_pods
+target 'UI' do
+  project 'UI/UI.xcodeproj'
+  pod 'Kingfisher'
 end
 
-target 'characterDetails' do
-    project 'characterDetails/characterDetails.xcodeproj'
-    ui_pods
-    rx_pods
-end
+feature_targets ['characterList', 'characterDetails', 'moviesList', 'movieDetails']
 
-target 'moviesList' do
-  project 'moviesList/moviesList.xcodeproj'
-  ui_pods
-  rx_pods
-end
+# target 'characterList' do
+#   project 'characterList/characterList.xcodeproj'
+#   ui_pods
+#   rx_pods
+# end
+
+# target 'characterDetails' do
+#     project 'characterDetails/characterDetails.xcodeproj'
+#     ui_pods
+#     rx_pods
+# end
+
+# target 'moviesList' do
+#   project 'moviesList/moviesList.xcodeproj'
+#   ui_pods
+#   rx_pods
+# end
+
+# target 'movieDetails' do
+#   project 'movieDetails/movieDetails.xcodeproj'
+#   ui_pods
+#   rx_pods
+# end
